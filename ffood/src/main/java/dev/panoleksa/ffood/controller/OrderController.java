@@ -1,7 +1,7 @@
 package dev.panoleksa.ffood.controller;
 
-import dev.panoleksa.ffood.model.Product;
-import dev.panoleksa.ffood.repository.ProductRepository;
+import dev.panoleksa.ffood.model.Order;
+import dev.panoleksa.ffood.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,19 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/fun-food/user")
+@RequestMapping("/fun-food/admin")
 @CrossOrigin
-public class ProductController {
-
-    private final ProductRepository repository;
+public class OrderController {
+    private final OrderRepository repository;
 
     @Autowired
-    public ProductController(ProductRepository repository) {
+    public OrderController(OrderRepository repository) {
         this.repository = repository;
     }
 
-    @GetMapping("/products")
-    public List<Product> findAll() {
+    @GetMapping("/all-orders")
+    public List<Order> findAll() {
         return repository.findAll();
     }
 

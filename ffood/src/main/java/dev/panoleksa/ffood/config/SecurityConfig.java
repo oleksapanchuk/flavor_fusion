@@ -29,9 +29,9 @@ public class SecurityConfig {
         return http
                     .csrf(AbstractHttpConfigurer::disable)
                     .authorizeHttpRequests((auth) -> auth
-                            .requestMatchers("/food/auth/**").permitAll()
-                            .requestMatchers("/food/admin/**").hasAuthority(Role.ADMIN.name())
-                            .requestMatchers("/food/user/**").hasAuthority(Role.USER.name())
+                            .requestMatchers("/fun-food/auth/**").permitAll()
+                            .requestMatchers("/fun-food/admin/**").hasAuthority(Role.ADMIN.name())
+                            .requestMatchers("/fun-food/user/**").hasAuthority(Role.USER.name())
                             .anyRequest().authenticated()
                     )
                     .sessionManagement()
