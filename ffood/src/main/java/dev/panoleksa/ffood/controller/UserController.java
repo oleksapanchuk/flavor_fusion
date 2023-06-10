@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/food")
+@RequestMapping("/food/admin")
 @CrossOrigin
 public class UserController {
 
